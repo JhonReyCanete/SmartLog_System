@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listPersonnels" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a23ce127-2d2a-429f-9abe-821be2091229">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT personnels.IDnumber, Concat(personnels.Lname,', ', 
+personnels.Fname,' ', personnels.MI,'.') as Name, personnels.Gender, personnels.Age,
+departments.Position FROM personnels
+INNER JOIN departments ON departments.id_Departments = personnels.Dpt_ID]]>
+	</queryString>
+	<field name="IDnumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Position" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="134" y="17" width="275" height="38" uuid="2664e4ed-f7ff-4674-a7e9-b611c78ce487"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BARANGAY KAHAPONAN]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="22" y="10" width="85" height="82" uuid="3cabf7ca-eef0-4a3c-92b5-951d297cd24e"/>
+				<imageExpression><![CDATA["C:\\Users\\Acer\\Desktop\\Final Capstone Project\\SmartLog_System\\src\\Reports\\bgy.jpg"]]></imageExpression>
+			</image>
+			<image hAlign="Center">
+				<reportElement x="442" y="6" width="85" height="82" uuid="20aa742e-3dfe-40a3-9f76-2cc592bd42f4"/>
+				<imageExpression><![CDATA["C:\\Users\\Acer\\Desktop\\Final Capstone Project\\SmartLog_System\\src\\Reports\\Official_Seal.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="134" y="45" width="275" height="17" uuid="6cb1a95b-e4b0-471a-a707-02f9efaf38cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Valencia City, Bukidnon, Philippines 8709]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="70" width="275" height="22" uuid="a36eaee6-6132-445a-acc8-760def418d17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ADMINISTRATIVE PERSONNELS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="20" width="111" height="18" forecolor="#000000" uuid="4a37d77a-ab37-4a26-8fd2-d260a443c895"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDnumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="20" width="165" height="18" forecolor="#000000" uuid="90b5b7c4-06cc-46f8-a4ca-91495d6b985f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="20" width="44" height="18" forecolor="#000000" uuid="49f681ba-9c30-4bd0-96e1-7f790c49d284"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="322" y="20" width="63" height="18" forecolor="#000000" uuid="44b9c074-0e61-41f1-b64c-01321f65378e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="385" y="20" width="170" height="18" forecolor="#000000" uuid="1ee1152f-c573-4d93-bc71-e28a5f6cf97f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Position]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="0e0cbbf4-94f7-42e2-a03c-656f7b508ead"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="111" height="18" uuid="0df105a3-0b2c-4000-9cdf-3681b673f274"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{IDnumber}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="111" y="0" width="165" height="18" uuid="97f11968-a469-4f6b-a345-ddace7171977"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="276" y="0" width="44" height="18" uuid="1fdc9bc7-e134-4784-a1af-ea67f9811215"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="322" y="0" width="63" height="18" uuid="6ba80bff-b3c1-436a-a6f1-10629c6ffcab"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Gender}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="385" y="0" width="170" height="18" uuid="c55d0b58-169d-495e-a177-59172cee9fda"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Position}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="19" width="80" height="15" uuid="0afd3ff3-fca4-4628-b4af-df90c9eb1608"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="19" width="40" height="15" uuid="0e9ff641-771c-4401-bb8b-5692a0ec0f9f"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

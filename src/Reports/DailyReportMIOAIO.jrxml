@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DailyReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="89c8c134-b237-4f2c-b401-b3b0c389e5b2">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="6491193b-be8d-4afa-8aff-ec7ba4d5f6ef"/>
+	<parameter name="logName" class="java.lang.String"/>
+	<parameter name="Date" class="java.lang.String"/>
+	<field name="COLUMN_0" class="java.lang.String"/>
+	<field name="COLUMN_1" class="java.lang.String"/>
+	<field name="COLUMN_2" class="java.lang.String"/>
+	<field name="COLUMN_3" class="java.lang.String"/>
+	<field name="COLUMN_4" class="java.lang.String"/>
+	<field name="COLUMN_5" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="38" y="0" width="80" height="79" uuid="b877964a-7805-4f29-92b5-a3b01a580275"/>
+				<imageExpression><![CDATA["C:\\Users\\Acer\\Desktop\\Final Capstone Project\\SmartLog_System\\src\\Reports\\bgy.jpg"]]></imageExpression>
+			</image>
+			<image hAlign="Center">
+				<reportElement x="444" y="1" width="76" height="76" uuid="5af9a0d1-50a8-4fb2-ad3a-8d82acd8cbd5"/>
+				<imageExpression><![CDATA["C:\\Users\\Acer\\Desktop\\Final Capstone Project\\SmartLog_System\\src\\Reports\\Official_Seal.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="135" y="12" width="275" height="38" uuid="5867fba7-1ed6-4efc-8a36-7488926df3d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BARANGAY KAHAPONAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="40" width="275" height="17" uuid="4275ec11-4250-4710-b60a-8cc98d6df856"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Valencia City, Bukidnon, Philippines 8709]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="57" width="275" height="22" uuid="9cf97849-a448-4443-8aa3-2ce690128fe8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="15" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[DAILY ATTENDANCE REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="71" height="22" uuid="d202f879-a67c-4426-8808-f318807a635e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LOG NAME: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="13" width="36" height="22" uuid="9737cd5f-abc3-4703-aedc-8b097dce395e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[DATE: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="13" width="303" height="20" uuid="c8d63e56-97d7-42df-bba2-06be9c0ccf67"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{logName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="13" width="143" height="20" uuid="daab86d2-8f8f-4b3e-8d1c-614699e2bc23"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_TH" x="0" y="3" width="94" height="39" backcolor="#FFFFFF" uuid="fb72f5f9-73ac-4487-8f9b-fec12731ba5e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ID NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="241" y="3" width="156" height="22" backcolor="#FFFFFF" uuid="f18fbc66-3238-469f-aa28-a9cd2754b685"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[MORNING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="397" y="3" width="156" height="22" backcolor="#FFFFFF" uuid="157a05ff-ea5a-4e25-9d92-6ee55eff6779"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[AFTERNOON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="241" y="25" width="78" height="17" backcolor="#FFFFFF" uuid="1dc55250-7a9f-4fae-a2cc-402d3b3543b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[IN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="319" y="25" width="78" height="17" backcolor="#FFFFFF" uuid="66b5cb52-591a-4355-a53e-3b7f36b4f23e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[OUT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="397" y="25" width="78" height="17" backcolor="#FFFFFF" uuid="f1bd751a-e2d7-49e8-9f52-b89c60a2d258"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[IN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="475" y="25" width="78" height="17" backcolor="#FFFFFF" uuid="9c1e5ce9-f586-44ad-825c-c61a4bc1fe6e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[OUT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="94" y="3" width="147" height="39" backcolor="#FFFFFF" uuid="5e24e853-b649-43c1-850a-29d1608e686c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="0" y="0" width="94" height="20" uuid="bb95251c-1886-409a-b3a9-c35ed7fe99dd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_0}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="241" y="0" width="78" height="20" uuid="5e7d1407-d98e-4de5-be67-06785db3ec47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="319" y="0" width="78" height="20" uuid="8188d7eb-481b-4d41-b02d-056ed16870ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="397" y="0" width="78" height="20" uuid="7369d8db-e26b-4710-81a2-2d717e726e90"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="475" y="0" width="78" height="20" uuid="f33bdf3a-2d89-4e76-aa9d-4b617d932b45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="94" y="0" width="147" height="20" uuid="aa995a82-8e7a-45a2-977b-ffdefe682806"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="118" y="6" width="326" height="40" uuid="458548ac-e064-4540-b8f6-c8715e50c0ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[I certify on my honor that the above is a true and correct
+of all the hours of work performed, record of which was made daily at
+the time of arrival and departure from office.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="67" width="118" height="12" uuid="bd1978c3-42f6-402a-af47-1259a2fa2519"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[IN-CHARGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="60" width="118" height="12" uuid="3b70d65a-b9f8-41be-87f7-bbba2675b964"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Verified in the prescribed office hours]]></text>
+			</staticText>
+			<line>
+				<reportElement x="213" y="61" width="145" height="1" uuid="fe068efb-c140-46e5-aaec-78499a7f2d56"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="400" y="0" width="103" height="23" uuid="d30a106c-aca3-42ae-9abf-249a24af5260"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="358" height="22" uuid="44d523d4-290e-4003-afbd-36cc974e2e13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[REPORT GENERATED BY SMARTLOG ATTENDANCE MONITORING SYSTEM]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="503" y="0" width="50" height="23" uuid="6c22b669-2d1e-4f44-a50c-1d270a9a0652"/>
+				<textFieldExpression><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

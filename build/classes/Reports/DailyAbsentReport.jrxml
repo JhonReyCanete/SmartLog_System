@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db417322-3285-4740-aa31-34139b7af5ae">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="6491193b-be8d-4afa-8aff-ec7ba4d5f6ef"/>
+	<parameter name="logName" class="java.lang.String"/>
+	<parameter name="Date" class="java.lang.String"/>
+        <parameter name="LogType" class="java.lang.String"/>
+	<field name="COLUMN_0" class="java.lang.String"/>
+	<field name="COLUMN_1" class="java.lang.String"/>
+	<field name="COLUMN_2" class="java.lang.String"/>
+	<field name="COLUMN_3" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="133" y="10" width="275" height="38" uuid="67fc7e05-7115-495e-995a-53d185adf204"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BARANGAY KAHAPONAN]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="10" y="12" width="80" height="79" uuid="c13bbf7c-97bb-467d-8aa0-2ee143cd93f1"/>
+				<imageExpression><![CDATA["C:\\Users\\Acer\\Desktop\\Final Capstone Project\\SmartLog_System\\src\\Reports\\bgy.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="133" y="55" width="275" height="20" uuid="8563f40e-35c1-4b78-ad55-50c0385d0289"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="15" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[DAILY ATTENDANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="75" width="275" height="20" uuid="9ad698d9-454c-4647-8777-6e1f497ce539"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ABSENT SUMMARY REPORT]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="460" y="14" width="76" height="76" uuid="0d3fa2df-a451-4ba1-a805-fcf31d880301"/>
+				<imageExpression><![CDATA["C:\\Users\\Acer\\Desktop\\Final Capstone Project\\SmartLog_System\\src\\Reports\\Official_Seal.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="133" y="38" width="275" height="17" uuid="d70b6b17-1e62-47b8-8eac-f04f21cb37be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Valencia City, Bukidnon, Philippines 8709]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="71" height="20" uuid="543eb6b6-8cf2-466c-a429-4e5c9d7127da"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LOG NAME: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="5" width="295" height="20" uuid="70096da0-18ba-4f7e-94a5-d4deb7e46b07"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{logName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="366" y="5" width="36" height="20" uuid="3320d696-c5d4-4a9d-8880-0a623697e4bb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[DATE: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="402" y="5" width="153" height="20" uuid="37ba5758-2416-4625-94ab-2e70ed83085a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="25" width="295" height="10" uuid="c05ee513-270f-4f0d-9717-4059f47f1e73"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LogType}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="25" width="71" height="10" uuid="27789c7c-b57e-4804-9876-d76060f4d7ab"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LOG TYPE:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_TH" x="447" y="1" width="108" height="22" backcolor="#FFFFFF" uuid="c3062aae-4498-413c-9a94-d7315d368282"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[AFTERNOON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="107" y="1" width="232" height="22" backcolor="#FFFFFF" uuid="afc90b26-3944-4e0e-b8ea-f90999d72240"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="339" y="1" width="108" height="22" backcolor="#FFFFFF" uuid="f4560e58-6a78-47c3-b83f-650e21c5e1da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[MORNING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="0" y="1" width="107" height="22" backcolor="#FFFFFF" uuid="b7340ed2-0845-4688-ab66-74ad5c1b4de2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ID NUMBER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="339" y="0" width="108" height="20" uuid="a410e434-7821-4f55-86d8-65dbd67024ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="447" y="0" width="108" height="20" uuid="6343932b-1828-4114-8b18-5c1b51d2e9bb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="0" y="0" width="107" height="20" uuid="c45e21ac-6e32-4dad-a2c3-e80f993deb0d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_0}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="table_TD" x="107" y="0" width="232" height="20" uuid="c0336f77-12e9-4995-abbf-3584e3015dc7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="2" width="80" height="20" uuid="1123fb02-0f88-4af9-a61e-56e67b1805c2"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="2" width="40" height="20" uuid="a10cbe00-a52c-49af-9e21-5a7c7aa06bd9"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="6" splitType="Stretch"/>
+	</summary>
+</jasperReport>
